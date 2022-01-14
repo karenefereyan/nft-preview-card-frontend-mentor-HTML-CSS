@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap;');
+
+:root{
+--main-text: hsl(215, 51%, 70%);
+--ethereum-text: hsl(178, 100%, 50%);
+--body-bg: hsl(217, 54%, 11%);
+--card-bg: hsl(216, 50%, 16%);
+--border-line-color: hsl(215, 32%, 27%);
+--heading-text: hsl(0, 0%, 100%);
+--paragraph-size: 18px;
+--font-light:300;
+--font-medium:400;
+--font-bold: 600;
+--font-family: 'Outfit', sans-serif;
+--round-corner: 15px;
+}
+
+html{
+    background-color: var(--body-bg);
+    font-family: var(--font-family);
+    font-weight:var(--font-light);
+}
+
+.container{
+    background-color:var(--card-bg);
+    max-width:400px;
+    margin: auto;
+    padding:20px;
+    border-radius: var(--round-corner);
+}
+
+img{
+    width:100%;
+    height:auto;
+    border-radius: var(--round-corner);
+
+}
+
+h1, span{
+    color:var(--heading-text);
+    font-weight: var(--font-bold);
+}
+
+h1:hover, p span:hover{
+    color:var(--ethereum-text);
+    transform: scale(.5);
+}
+
+p{
+    color:var(--main-text);
+    font-size: var(--paragraph-size);
+}
+
+.inner-flex-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.inner-flex-section > p:first-child{
+    color: var(--ethereum-text);
+}
+
+.inner-flex-section > p:first-child::before{
+    content: url("../images/icon-ethereum.svg");
+    margin-right:7.5px;
+}
+
+.inner-flex-section > p:nth-child(2)::before{
+    content: url("../images/icon-clock.svg");
+    margin-right:7.5px;
+}
+
+footer{
+    display: flex;
+    border-top:1px solid var(--border-line-color);
+    padding-top: 15px;
+}
+
+footer img{
+    width: 15%;
+    height: auto;
+    border:2px solid var(--heading-text);
+    border-radius: 100%;
+    margin-right: 20px;
+}
+
+.container > img:hover{
+    filter:url("../images/icon-view.svg");
+    filter: brightness(75%);
+}
