@@ -59,22 +59,21 @@ img{
     top: 0; /*Place directly over the main image */
     z-index: 999;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.535s ease-in-out;
 }
 
-.container .main-image div:hover img{
+.container .main-image div img{
+    /*To perfectly center the view image */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-
 .container .main-image div:hover{
     opacity: 1;
     cursor: pointer;
 }
-
 
 h1, span{
     color:var(--heading-text);
