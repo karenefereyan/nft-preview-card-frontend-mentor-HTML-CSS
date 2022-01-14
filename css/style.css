@@ -1,3 +1,9 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap;');
 
 :root{
@@ -21,6 +27,10 @@ html{
     font-weight:var(--font-light);
 }
 
+body{
+    margin: 2rem 2rem 0 2rem;
+}
+
 .container{
     background-color:var(--card-bg);
     max-width:400px;
@@ -30,11 +40,41 @@ html{
 }
 
 img{
-    width:100%;
+    max-width:100%;
     height:auto;
     border-radius: var(--round-corner);
 
 }
+
+.container .main-image{
+    position: relative;
+}
+
+.container .main-image div{
+    position: absolute;
+    width: 100%;
+    height:calc(100% - 4px);
+    background-color:var(--ethereum-text);
+    border-radius: 15px;
+    top: 0; /*Place directly over the main image */
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.container .main-image div:hover img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.container .main-image div:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
 
 h1, span{
     color:var(--heading-text);
@@ -44,6 +84,7 @@ h1, span{
 h1:hover, p span:hover{
     color:var(--ethereum-text);
     transform: scale(.5);
+    cursor:pointer;
 }
 
 p{
@@ -54,6 +95,7 @@ p{
 .inner-flex-section{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .inner-flex-section > p:first-child{
@@ -87,4 +129,5 @@ footer img{
 .container > img:hover{
     filter:url("../images/icon-view.svg");
     filter: brightness(75%);
+    cursor:pointer;
 }
