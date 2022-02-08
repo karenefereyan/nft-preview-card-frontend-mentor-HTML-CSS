@@ -1,8 +1,8 @@
-/* *{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} */
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap;');
 
@@ -29,6 +29,7 @@ html{
 
 body{
     margin: 2rem 2rem 0 2rem;
+    color: var(--main-text);
 }
 
 .container{
@@ -40,7 +41,8 @@ body{
 }
 
 img{
-    max-width:100%;
+    max-width:100%; /*The image always fits into the container 
+    of the device its been viewed on */
     height:auto;
     border-radius: var(--round-corner);
 
@@ -75,6 +77,11 @@ img{
     cursor: pointer;
 }
 
+h1{
+    margin: 1.5rem 0 1rem 0;
+    font-weight: 600;
+}
+
 h1, span{
     color:var(--heading-text);
     font-weight: var(--font-bold);
@@ -82,43 +89,49 @@ h1, span{
 
 h1:hover, p span:hover{
     color:var(--ethereum-text);
-    transform: scale(.5);
     cursor:pointer;
 }
 
 p{
     color:var(--main-text);
     font-size: var(--paragraph-size);
+    line-height: 1.8rem;
 }
 
-.inner-flex-section{
+.container ul{
+    list-style-type: none;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.container ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.inner-flex-section > p:first-child{
+.container ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+
+.container ul li img{margin-right: .6rem;}
+
+.container ul li:first-child{
     color: var(--ethereum-text);
-}
-
-.inner-flex-section > p:first-child::before{
-    content: url("../images/icon-ethereum.svg");
-    margin-right:7.5px;
-}
-
-.inner-flex-section > p:nth-child(2)::before{
-    content: url("../images/icon-clock.svg");
-    margin-right:7.5px;
 }
 
 footer{
     display: flex;
+    justify-content: start;
+    align-items: center;
     border-top:1px solid var(--border-line-color);
     padding-top: 15px;
 }
 
 footer img{
-    width: 15%;
+    width: 3rem;
     height: auto;
     border:2px solid var(--heading-text);
     border-radius: 100%;
@@ -129,4 +142,20 @@ footer img{
     filter:url("../images/icon-view.svg");
     filter: brightness(75%);
     cursor:pointer;
+}
+
+@media screen and (max-width:300px){
+    .container ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .container ul li:first-child{
+        margin-bottom: 1.5rem;
+    }
+
+    footer img{width: 2rem;}
+
 }
